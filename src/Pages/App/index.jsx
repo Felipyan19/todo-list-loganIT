@@ -5,12 +5,12 @@ import { TodoListContext, TodoListProvider } from '../../Context'
 import { Home } from '../Home'
 import { NotFound } from '../NotFound'
 import { Login } from '../Login'
-import './App.css'
 
 const AppRoutes = () => {
   
   const context = useContext(TodoListContext)
   let routes = useRoutes([
+    { path: '/', element: context.isLogIn ? <Home /> : <Navigate replace to={'/login'} /> },
     { path: '/Home', element: context.isLogIn ? <Home /> : <Navigate replace to={'/login'} /> },
     { path: '/login', element: <Login />  },
     { path: '/*', element: <NotFound /> },

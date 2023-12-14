@@ -9,6 +9,7 @@ const TodoListProvider = ({children}) => {
 const [isLogIn, setIsLogIn] = useState(false)
 const [valueinlogin, setValueinlogin] = useState({})
 const [todos, setTodos] = useState([])
+const [search, setSearch] = useState('');
 
 
     return (
@@ -18,7 +19,9 @@ const [todos, setTodos] = useState([])
             valueinlogin,
             setValueinlogin,
             todos,
-            setTodos
+            setTodos,
+            search,
+            setSearch
         }}>
             {children}
         </TodoListContext.Provider>

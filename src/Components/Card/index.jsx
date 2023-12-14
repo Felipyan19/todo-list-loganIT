@@ -2,24 +2,24 @@ import Card from 'react-bootstrap/Card';
 import { FaRegCheckCircle, FaCheckCircle } from "react-icons/fa";
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-const MyCard = ({ id ,title, priority, dueDate, onCompleted, onDelete, isCompleted }) => {
+const MyCard = ({ id, title, priority, dueDate, onCompleted, onDelete, isCompleted }) => {
     return (
         <Card className="mb-3 shadow-sm" style={{ width: '15rem', cursor: 'default' }}>
             <Card.Body>
                 <div className='d-flex justify-content-between align-items-center mb-3'>
                     {isCompleted ? (
-                        <FaCheckCircle 
+                        <FaCheckCircle
                             style={{ color: 'green' }}
                             onClick={() => onCompleted(id)}
                         />
                     ) : (
-                        <FaRegCheckCircle 
+                        <FaRegCheckCircle
                             style={{ color: 'green', cursor: 'pointer' }}
                             onClick={() => onCompleted(id)}
                             title="Marcar como completada"
                         />
                     )}
-                    <RiDeleteBin5Line 
+                    <RiDeleteBin5Line
                         style={{ color: 'red', cursor: 'pointer' }}
                         onClick={() => onDelete(id)}
                         title="Eliminar tarea"
