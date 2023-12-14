@@ -32,7 +32,7 @@ const AppRoutes = () => {
  * @return {JSX.Element} The root component of the application.
  */
 function App() {
-  localStorage.setItem('session', JSON.stringify({usuario: 'i@admin.com', password: 'password'}))
+  localStorage.setItem('session', JSON.stringify({usuario: 'AndresDev@admin.com', password: 'password', name: 'Andres Dev'}))
   return (
     <TodoListProvider>
       <BrowserRouter>

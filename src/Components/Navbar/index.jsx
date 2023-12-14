@@ -22,15 +22,15 @@ const MyNavbar = () => {
 
   return (
     <Navbar className="bg-primary text-white justify-content-between">
-      <Navbar.Brand href="Home" className='mx-4'>
+      <Navbar.Brand href="https://docs-todo-list.vercel.app/" className='mx-4'>
         <h1 className="text-3xl font-bold text-white">
           Todo List
         </h1>
       </Navbar.Brand>
       <Nav className="ml-auto align-items-center mx-4">
         <FaUserCircle size={28} style={{ marginRight: '10px' }} />
-        <Nav.Link href="#login" className='text-white'>
-          {context.valueinlogin.usuario}
+        <Nav.Link className='text-white'>
+          {context.valueinlogin.name}
         </Nav.Link>
         <Button variant="outline-light" onClick={handleLogout}>
           Salir
