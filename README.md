@@ -28,15 +28,15 @@ Welcome to our Todo List application! 📝 This project is your go-to solution f
 
 Experience the ease and elegance of organized task management. Let our Todo List be your trusted companion in staying on top of your daily agenda.
 
-For detailed documentation, including function parameters and usage, refer to the [JsDoc documentation](https://docs-rg7swyfto-felipyan19.vercel.app/).
+For detailed documentation, including function parameters and usage, refer to the [JsDoc documentation](https://docs-todo-list.vercel.app//).
 
 ## Getting Started
 
 To start managing your tasks with our Todo List, follow these simple steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/todo-list.git`
+1. Clone the repository: `git clone https://github.com/Felipyan19/todo-list-loganIT.git`
 2. Install dependencies: `npm install`
-3. Run the application: `npm start`
+3. Run the application: `npm run dev`
 
 Feel free to explore the codebase, delve into the components, and tailor the project to suit your task management needs.
 
