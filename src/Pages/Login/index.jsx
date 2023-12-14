@@ -35,9 +35,10 @@ const Login = () => {
      */
     const handleSubmit = (event) => {
         event.preventDefault();
-        const session = localStorage.getItem('session');
-        if (session === JSON.stringify(context.valueinlogin)) {
+        const session = JSON.parse(localStorage.getItem('session'));
+        if (session.usuario === context.valueinlogin.usuario && session.password === context.valueinlogin.password) {
             context.setIsLogIn(true);
+            context.setValueinlogin({ ...context.valueinlogin, name: session.name });
             navigate('/Home');
         } else {
             alert('Credenciales incorrectas');

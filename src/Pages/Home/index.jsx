@@ -10,7 +10,6 @@ import { MdOutlinePlaylistAdd } from "react-icons/md";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Toast from 'react-bootstrap/Toast';
-import { Md } from 'react-icons/md';
 
 /**
  * Home component rendering a Todo list with add, complete,
@@ -73,7 +72,7 @@ const Home = () => {
      * @return {void}
      */
     const onDelete = (index) => {
-        const updatedTodos = context.todos.filter((_, i) => i !== index);
+        const updatedTodos = context.todos.filter((todos, i) => i !== index);
         context.setTodos(updatedTodos);
         localStorage.setItem('todos', JSON.stringify(updatedTodos));
     };
@@ -99,21 +98,22 @@ const Home = () => {
         <>
             <MyNavbar />
             <MyInput />
-            {beforeTime && <Container className="text-center m-4">
-                <div className="d-flex flex-wrap gap-5">
-                    {context.todos.map((todo, index) => (
-                        <MyCard
-                            key={index}
-                            id={index}
-                            title={todo.Nombre}
-                            priority={todo.Prioridad}
-                            dueDate={todo.Fecha}
-                            onCompleted={onComplete}
-                            onDelete={onDelete}
-                            isCompleted={todo.completado}
-                            description={todo.description}
-                        />
-                    ))}
+            {beforeTime && <div className="text-center p-4 w-100">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-5">
+        {context.todos.map((todo, index) => (
+            <div key={index} className="col mb-1">
+                <MyCard
+                    id={index}
+                    title={todo.Nombre}
+                    priority={todo.Prioridad}
+                    dueDate={todo.Fecha}
+                    onCompleted={onComplete}
+                    onDelete={onDelete}
+                    isCompleted={todo.completado}
+                    description={todo.description}
+                />
+            </div>
+        ))}
                 </div>
 
                 <Button
@@ -150,7 +150,7 @@ const Home = () => {
                 </div>
 
                 <AddTodoModal showModal={showModal} handleClose={handleClose} handleSubmit={handleSubmit} />
-            </Container> ||
+            </div> ||
                 <Container>
                     <Skeleton count={15} height={"45px"} />
                 </Container>

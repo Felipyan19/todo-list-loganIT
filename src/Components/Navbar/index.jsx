@@ -28,8 +28,8 @@ const MyNavbar = () => {
         </h1>
       </Navbar.Brand>
       <Nav className="ml-auto align-items-center mx-4">
-        <FaUserCircle size={28} style={{ marginRight: '10px' }} />
-        <Nav.Link className='text-white'>
+        <FaUserCircle size={28}  />
+        <Nav.Link className='text-white mx-1'>
           {context.valueinlogin.name}
         </Nav.Link>
         <Button variant="outline-light" onClick={handleLogout}>
