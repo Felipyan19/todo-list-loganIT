@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { InputGroup } from 'react-bootstrap';
-import { LiaUserCircle } from "react-icons/lia";
+import { PiUserSquareDuotone } from "react-icons/pi";
 
 const Login = () => {
     const context = useContext(TodoListContext);
@@ -40,7 +40,7 @@ const Login = () => {
                 </Container>
                 <Card className="w-100 h-75 shadow rounded d-flex justify-content-center align-items-center">
                     <Card.Body className="w-75 d-flex flex-column justify-content-center align-items-center">
-                        <LiaUserCircle className='text-primary w-25 h-25 mb-4'/>
+                        <PiUserSquareDuotone className='text-primary w-25 h-25 mb-4'/>
                         <Form onSubmit={handleSubmit} className="w-100">
                             <Form.Group className="mb-4" controlId="Email">
                                 <Form.Label>Usuario</Form.Label>
