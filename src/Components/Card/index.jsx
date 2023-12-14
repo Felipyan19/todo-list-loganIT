@@ -5,6 +5,13 @@ import { Description } from '../Description';
 import { useState } from 'react';
 
 
+/**
+ * Renders a card component with task details, including priority
+ * indicators, completion status, and delete functionality.
+ *
+ * @param {Object} props - Contains task details and event handlers.
+ * @return {ReactElement} A card representing a single task.
+ */
 const MyCard = (props) => {
 
     const [show, setShow] = useState(false);

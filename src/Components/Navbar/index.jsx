@@ -6,6 +6,11 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { FaUserCircle } from "react-icons/fa";
 
+/**
+ * Represents the navigation bar in a Todo List application,
+ * using context for user state and providing a logout
+ * functionality.
+ */
 const MyNavbar = () => {
   const context = useContext(TodoListContext);
   const navigate = useNavigate();

@@ -1,6 +1,14 @@
 import React from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 
+/**
+ * Renders a modal dialog for adding a new todo item.
+ *
+ * @param {boolean} showModal - Controls the visibility of the modal
+ * @param {function} handleClose - Function to call on modal close
+ * @param {function} handleSubmit - Function to call on form submit
+ * @return {JSX.Element} A modal component with a form for adding a todo
+ */
 const AddTodoModal = ({ showModal, handleClose, handleSubmit }) => {
     return (
         <Modal show={showModal} onHide={handleClose} centered>

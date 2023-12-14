@@ -11,6 +11,10 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Toast from 'react-bootstrap/Toast';
 
+/**
+ * Home component rendering a Todo list with add, complete,
+ * and delete functionality, along with local storage sync.
+ */
 const Home = () => {
     const context = useContext(TodoListContext);
     const [showModal, setShowModal] = useState(false);
@@ -39,6 +43,15 @@ const Home = () => {
         setShowModal(false);
     };
 
+    /**
+     * Handles the submission of a form by preventing the
+     * default form submission, appending a 'completada'
+     * field to the form data, updating the context's todos
+     * state, and persisting the new todos to localStorage.
+     *
+     * @param {Event} event - The submit event from the form.
+     * @return {void}
+     */
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -51,12 +64,26 @@ const Home = () => {
         setShowModal(false);
     };
 
+    /**
+     * Deletes a todo item by its index from the list 
+     * and updates local storage.
+     *
+     * @param {number} index - The index of the todo to delete.
+     * @return {void}
+     */
     const onDelete = (index) => {
         const updatedTodos = context.todos.filter((_, i) => i !== index);
         context.setTodos(updatedTodos);
         localStorage.setItem('todos', JSON.stringify(updatedTodos));
     };
 
+    /**
+     * Toggles the completion status of a todo item by index,
+     * updates the todos in the context, and saves the new state
+     * to localStorage. It also triggers a toast notification.
+     *
+     * @param {number} index - The index of the todo to toggle.
+     */
     const onComplete = (index) => {
         const updatedTodos = context.todos.map((todo, i) => (i === index ? { ...todo, completado: !todo.completado } : todo));
         context.setTodos(updatedTodos);

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+/**
+ * Renders a 404 Not Found page component with a message
+ * and a link to the home page.
+ */
 const NotFound = () => {
     return (
         <Container>

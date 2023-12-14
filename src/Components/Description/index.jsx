@@ -2,6 +2,20 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
+/**
+ * Renders a modal with a title, description, priority, and due date. 
+ * It has a close button which hides the modal and a button to 
+ * acknowledge the information presented. It also dynamically 
+ * assigns a text color class based on the priority level.
+ *
+ * @param {object} props - Contains title, description, priority, 
+ *                         and dueDate.
+ * @param {function} setShow - Function to set the visibility of 
+ *                             the modal.
+ * @param {boolean} show - Determines if the modal is visible.
+ * @return {JSX.Element} A modal component with dynamic content 
+ *                       and styling.
+ */
 const Description = ({ props, setShow, show }) => {
     const handleClose = () => setShow(false);
 

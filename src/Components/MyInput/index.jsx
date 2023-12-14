@@ -3,6 +3,15 @@ import { Navbar, NavDropdown, InputGroup, FormControl, Button, Container, Form }
 import { IoSearch } from "react-icons/io5";
 import { TodoListContext } from '../../Context';
 
+/**
+ * `MyInput` is a functional React component that renders an input group
+ * with a dropdown allowing the user to search and filter todos by name,
+ * priority, or date. It uses context to manage and update the list of
+ * todos based on the search criteria.
+ *
+ * @return {JSX.Element} The search input group within a container and
+ * navbar for filtering todos.
+ */
 const MyInput = () => {
     const context = useContext(TodoListContext);
     const { setSearch, todos } = context;
@@ -10,10 +19,27 @@ const MyInput = () => {
     const [dropdownTitle, setDropdownTitle] = useState('Nombre');
     const [lastTerm, setLastTerm] = useState('');
 
+    /**
+     * Updates the search term state based on user input.
+     *
+     * @param {object} event - The input event triggering the
+     *                         change.
+     * @return {void}
+     */
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
     };
 
+    /**
+     * Triggers a search operation based on the search term. If the 
+     * search term is different from the last term, it resets the 
+     * last term and updates the search. It then filters the todos 
+     * by the search term if it's not an empty string; otherwise, 
+     * it resets to the original todos from localStorage.
+     *
+     * There are no parameters or return values as this function 
+     * relies on and manipulates state within its scope.
+     */
     const handleSearch = () => {
         if (searchTerm !== lastTerm) {
             context.setTodos(JSON.parse(localStorage.getItem('todos')));
@@ -28,11 +54,29 @@ const MyInput = () => {
         }
     };
 
+    /**
+     * Handles the change event on a dropdown, updating
+     * the title and resetting the search term.
+     *
+     * @param {string} eventKey - The key of the selected
+     *                          dropdown item.
+     * @param {Object} event - The event object containing
+     *                       the target text.
+     */
     const handleDropdownChange = (eventKey, event) => {
         setDropdownTitle(event.target.text);
         setSearchTerm('');
     };
 
+    /**
+     * Renders an input group based on the dropdownTitle state. 
+     * If the dropdownTitle is 'Nombre', a text search input is 
+     * rendered. If it's 'Prioridad', a priority select drop-down 
+     * is rendered. If it's 'Fecha', a date picker is rendered.
+     *
+     * @return {JSX.Element} The input group element for the 
+     *                       corresponding dropdownTitle value.
+     */
     const renderInputGroup = () => {
         if (dropdownTitle === 'Nombre') {
             return (

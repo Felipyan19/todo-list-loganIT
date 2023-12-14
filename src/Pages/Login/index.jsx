@@ -8,15 +8,31 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { InputGroup } from 'react-bootstrap';
 import { PiUserSquareDuotone } from "react-icons/pi";
 
+/**
+ * Renders the login component, provides UI for user
+ * authentication, and navigates to the home page upon
+ * successful login.
+ */
 const Login = () => {
     const context = useContext(TodoListContext);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
+    /**
+     * Toggles the state of password visibility.
+     */
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
+    /**
+     * Handles the form submission event by preventing the default
+     * form submission, checking if the current session matches the
+     * context's valueinlogin, and navigating to the home page if
+     * the credentials are correct, otherwise alerts the user.
+     *
+     * @param {Event} event - The event object from the form submit.
+     */
     const handleSubmit = (event) => {
         event.preventDefault();
         const session = localStorage.getItem('session');
