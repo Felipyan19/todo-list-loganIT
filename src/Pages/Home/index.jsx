@@ -10,6 +10,7 @@ import { MdOutlinePlaylistAdd } from "react-icons/md";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Toast from 'react-bootstrap/Toast';
+import { Md } from 'react-icons/md';
 
 /**
  * Home component rendering a Todo list with add, complete,
